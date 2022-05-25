@@ -1,0 +1,15 @@
+a{
+    text-decoration: none;
+}
+#logout {
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+@media (max-width: 759px) {
+    #logout {
+        font-size: 10px;
+    }
+    .btn-lg {
+        padding: 3px;
+    }
+}

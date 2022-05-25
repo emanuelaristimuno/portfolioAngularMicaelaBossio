@@ -1,0 +1,15 @@
+.col{
+    margin: 0 2px;
+}
+
+.btn {
+    display: flex;
+    justify-content: end;
+    padding: 5px;
+}
+img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+

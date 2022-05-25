@@ -1,0 +1,38 @@
+nav {
+    background: #FF8C32;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+#logoArgProg {
+    margin-left: 5px;
+    width: 40%;
+}
+#redesSoc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20%;
+}
+.color {
+    color: #06113C;
+}
+#button {
+    display: flex;
+    justify-content: end;
+    margin: 20px;
+}
+.margen{
+    margin: 5px;
+}
+@media (max-width: 759px) {
+    nav {
+        height: 40px;
+    }
+    #logoArgProg {
+        width: 50%;
+    }
+    #redesSoc {
+        font-size: 10px;
+    }
+}
