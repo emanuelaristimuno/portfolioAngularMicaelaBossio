@@ -19,5 +19,9 @@ export class InfoAcadComponent implements OnInit {
       this.educacion=data;
     });
   }
+
+  borrar(id:number){
+    alert('borrar id '+ id);
+  }
 }
 

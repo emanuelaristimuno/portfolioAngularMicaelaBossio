@@ -23,15 +23,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
 import { ImgHastaProntoComponent } from './componentes/img-hasta-pronto/img-hasta-pronto.component';
 import { SkillsSoftComponent } from './componentes/skills-soft/skills-soft.component';
+import { FormsModule } from '@angular/forms';
+import { CrearComponent } from './componentes/CRUD-Educacion/crear/crear.component';
+import { EditarComponent } from './componentes/CRUD-Educacion/editar/editar.component';
+import { EliminarComponent } from './componentes/CRUD-Educacion/eliminar/eliminar.component';
 
-const appRoutes: Routes=[
-  {path:'home', component: HomeComponent},
-  {path:'formulario', component: FormularioAccesoComponent},
-  {path:'btnAdd', component: BtnAgregarComponent},
-  {path:'btnEdit', component: BtnEditarComponent},
-  {path:'btnDelete', component: BtnDeleteComponent},
-  {path:'imgHastaPronto', component: ImgHastaProntoComponent}
-];
+// const appRoutes: Routes=[
+//   {path:'home', component: HomeComponent},
+//   {path:'formulario', component: FormularioAccesoComponent},
+//   {path:'btnAdd', component: BtnAgregarComponent},
+//   {path:'btnEdit', component: BtnEditarComponent},
+//   {path:'btnDelete', component: BtnDeleteComponent},
+//   {path:'imgHastaPronto', component: ImgHastaProntoComponent}
+// ];
 
 @NgModule({
   declarations: [
@@ -53,13 +57,18 @@ const appRoutes: Routes=[
     HomeComponent,
     ImgHastaProntoComponent,
     SkillsSoftComponent,
+    CrearComponent,
+    EditarComponent,
+    EliminarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgCircleProgressModule.forRoot({}),
-    RouterModule.forRoot(appRoutes),
+    // .forRoot(appRoutes)
+    RouterModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
