@@ -21,4 +21,8 @@ export class ExpLaboralComponent implements OnInit {
     });
   }
 
+  borrarEL(id:number){
+    alert('borrar id '+id);
+  }
+
 }

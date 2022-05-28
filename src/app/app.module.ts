@@ -27,15 +27,9 @@ import { FormsModule } from '@angular/forms';
 import { CrearComponent } from './componentes/CRUD-Educacion/crear/crear.component';
 import { EditarComponent } from './componentes/CRUD-Educacion/editar/editar.component';
 import { EliminarComponent } from './componentes/CRUD-Educacion/eliminar/eliminar.component';
-
-// const appRoutes: Routes=[
-//   {path:'home', component: HomeComponent},
-//   {path:'formulario', component: FormularioAccesoComponent},
-//   {path:'btnAdd', component: BtnAgregarComponent},
-//   {path:'btnEdit', component: BtnEditarComponent},
-//   {path:'btnDelete', component: BtnDeleteComponent},
-//   {path:'imgHastaPronto', component: ImgHastaProntoComponent}
-// ];
+import { CrearELComponent } from './componentes/CRUD-ExpLaboral/crear-el/crear-el.component';
+import { EditarELComponent } from './componentes/CRUD-ExpLaboral/editar-el/editar-el.component';
+import { EliminarELComponent } from './componentes/CRUD-ExpLaboral/eliminar-el/eliminar-el.component';
 
 @NgModule({
   declarations: [
@@ -59,14 +53,16 @@ import { EliminarComponent } from './componentes/CRUD-Educacion/eliminar/elimina
     SkillsSoftComponent,
     CrearComponent,
     EditarComponent,
-    EliminarComponent
+    EliminarComponent,
+    CrearELComponent,
+    EditarELComponent,
+    EliminarELComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgCircleProgressModule.forRoot({}),
-    // .forRoot(appRoutes)
     RouterModule,
     FormsModule,
   ],
