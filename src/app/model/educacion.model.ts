@@ -9,4 +9,6 @@ export class Educacion{
         this.fecha=fecha;
         this.titulo=titulo;
     }
+
+    
 }

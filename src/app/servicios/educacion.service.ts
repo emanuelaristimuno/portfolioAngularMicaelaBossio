@@ -20,6 +20,10 @@ export class EducacionService {
     return this.http.post<any>(this.url+'crear', educacion);
   }
 
+  public traerPorId(id:number): Observable<Educacion>{
+    return this.http.get<Educacion>(this.url + `traerporid/${id}`)
+  }
+
   public editarEducacion(id: number, educacion: Educacion): Observable<any>{
     return this.http.put<any>(this.url+ `editar/${id}`, educacion);
   }
