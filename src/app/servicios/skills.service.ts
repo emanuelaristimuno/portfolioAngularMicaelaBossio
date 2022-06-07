@@ -15,4 +15,18 @@ export class SkillsService {
 
   public getSkill(): Observable<Skill>{
     return this.http.get<Skill>(this.url + 'skill/query?tipo=hard');
-  }}
+  }
+
+  public crearHardSkill(hardSkill: Skill): Observable<any>{
+    return this.http.post<any>(this.url + 'skill/crear', hardSkill);
+  }
+
+  public editarHardSkill(id:number, hardSkill: Skill): Observable<any>{
+    return this.http.put<any>(this.url+`skill/editar/${id}`, hardSkill);
+  }
+
+  public eliminarHardSkill(id:number): Observable<any>{
+    return this.http.delete<any>(this.url+ `skill/borrar/${id}`);
+  }
+
+}

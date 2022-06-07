@@ -15,4 +15,16 @@ export class ProyectoService {
   public getProyecto(): Observable<Proyecto>{
     return this.http.get<Proyecto>(this.url + 'all');
   }
+
+  public crearProyecto(proyecto: Proyecto): Observable<any>{
+    return this.http.post<any>(this.url + 'crear', proyecto);
+  }
+
+  public editarProyecto(id:number, proyecto: Proyecto): Observable<any>{
+    return this.http.put<any>(this.url+`editar/${id}`, proyecto);
+  }
+
+  public eliminarProyecto(id:number): Observable<any>{
+    return this.http.delete<any>(this.url+ `borrar/${id}`);
+  }
 }

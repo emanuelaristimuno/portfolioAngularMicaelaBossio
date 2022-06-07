@@ -20,4 +20,9 @@ export class ProyectosComponent implements OnInit {
     })
   }
 
+  borrarProyecto(id: number){
+    alert('Borrar id ' + id);
+  }
+
+
 }

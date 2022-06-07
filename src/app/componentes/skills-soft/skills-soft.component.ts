@@ -20,4 +20,8 @@ export class SkillsSoftComponent implements OnInit {
     })
   }
 
+  borrarSS(id: number){
+    alert('Borrar id ' + id);
+  }
+
 }

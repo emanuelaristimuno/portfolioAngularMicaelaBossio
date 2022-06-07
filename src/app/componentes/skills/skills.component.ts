@@ -20,4 +20,8 @@ export class SkillsComponent implements OnInit {
     })
   }
 
+  borrarHS(id: number){
+    alert('Borrar id ' + id);
+  }
+
 }

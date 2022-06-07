@@ -30,6 +30,15 @@ import { EliminarComponent } from './componentes/CRUD-Educacion/eliminar/elimina
 import { CrearELComponent } from './componentes/CRUD-ExpLaboral/crear-el/crear-el.component';
 import { EditarELComponent } from './componentes/CRUD-ExpLaboral/editar-el/editar-el.component';
 import { EliminarELComponent } from './componentes/CRUD-ExpLaboral/eliminar-el/eliminar-el.component';
+import { CrearHsComponent } from './componentes/CRUD-Skill/crear-hs/crear-hs.component';
+import { EditarHsComponent } from './componentes/CRUD-Skill/editar-hs/editar-hs.component';
+import { EliminarHsComponent } from './componentes/CRUD-Skill/eliminar-hs/eliminar-hs.component';
+import { CrearSsComponent } from './componentes/CRUD-Skill/crear-ss/crear-ss.component';
+import { EditarSsComponent } from './componentes/CRUD-Skill/editar-ss/editar-ss.component';
+import { EliminarSsComponent } from './componentes/CRUD-Skill/eliminar-ss/eliminar-ss.component';
+import { CrearProyComponent } from './componentes/CRUD-Proyecto/crear-proy/crear-proy.component';
+import { EditarProyComponent } from './componentes/CRUD-Proyecto/editar-proy/editar-proy.component';
+import { EliminarProyComponent } from './componentes/CRUD-Proyecto/eliminar-proy/eliminar-proy.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +65,16 @@ import { EliminarELComponent } from './componentes/CRUD-ExpLaboral/eliminar-el/e
     EliminarComponent,
     CrearELComponent,
     EditarELComponent,
-    EliminarELComponent
+    EliminarELComponent,
+    CrearHsComponent,
+    EditarHsComponent,
+    EliminarHsComponent,
+    CrearSsComponent,
+    EditarSsComponent,
+    EliminarSsComponent,
+    CrearProyComponent,
+    EditarProyComponent,
+    EliminarProyComponent,
   ],
   imports: [
     BrowserModule,
