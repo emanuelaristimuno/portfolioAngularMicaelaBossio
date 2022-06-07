@@ -31,7 +31,7 @@ export class InfoAcadComponent implements OnInit {
 
   borrar(id: number) {
     this.educacionService.eliminarEducacion(id).subscribe(data => {
-      console.log('Se eliminó: ' + data);
+      console.log(data + 'Eliminado');
       this.cargarEducacion();
     })
   }
