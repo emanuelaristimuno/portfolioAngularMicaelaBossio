@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SkillsService } from 'src/app/servicios/skills.service';
 
 @Component({
@@ -9,19 +10,28 @@ import { SkillsService } from 'src/app/servicios/skills.service';
 
 export class SkillsComponent implements OnInit {
 
-  hardskills:any;
+  hardskills: any;
 
-  constructor(private skillService:SkillsService) { }
+  constructor(private skillService: SkillsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.skillService.getSkill().subscribe(data=>{
+    this.skillService.getSkill().subscribe(data => {
       console.log(data);
-      this.hardskills=data;
+      this.hardskills = data;
+    });
+    this.cargarHardSkill();
+  }
+
+  cargarHardSkill(): void {
+    this.skillService.getSkill().subscribe(data => {
+      this.hardskills = data;
     })
   }
 
-  borrarHS(id: number){
-    alert('Borrar id ' + id);
+  borrarHS(id: number) {
+    this.skillService.eliminarHardSkill(id).subscribe(data => {
+      console.log("El ID: "+ id + ' fue eliminado');
+      this.cargarHardSkill();
+    })
   }
-
 }

@@ -20,6 +20,10 @@ export class ExplaboralService {
     return this.http.post<any>(this.url+'crear', expLab);
   }
 
+  public traerPorId(id:number): Observable<ExpLaboral>{
+    return this.http.get<ExpLaboral>(this.url + `traerporid/${id}`);
+  }
+
   public editarExpLaboral(id:number, expLab: ExpLaboral): Observable<any>{
     return this.http.put<any>(this.url+`edita/${id}`, expLab);
   } 

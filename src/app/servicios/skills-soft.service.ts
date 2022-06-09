@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Skill } from '../model/skill.model';
+import { SoftSkill } from '../model/softSkill.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class SkillsSoftService {
 
   public crearSoftSkill(softSkill: Skill): Observable<any>{
     return this.http.post<any>(this.url + 'skill/crear', softSkill);
+  }
+
+  public traerPorId(id:number): Observable<SoftSkill>{
+    return this.http.get<SoftSkill>(this.url + `traerporid/${id}`)
   }
 
   public editarSoftSkill(id:number, softSkill: Skill): Observable<any>{

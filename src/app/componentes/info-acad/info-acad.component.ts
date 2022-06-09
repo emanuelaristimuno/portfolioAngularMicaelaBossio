@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
@@ -31,7 +30,7 @@ export class InfoAcadComponent implements OnInit {
 
   borrar(id: number) {
     this.educacionService.eliminarEducacion(id).subscribe(data => {
-      console.log(data + 'Eliminado');
+      console.log("El ID: "+ id + ' fue eliminado');
       this.cargarEducacion();
     })
   }

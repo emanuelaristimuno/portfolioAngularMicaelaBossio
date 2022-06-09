@@ -10,13 +10,18 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class EditarComponent implements OnInit {
 
-  educacion: Educacion | any;
+  id?:number=0;
+  educacion: Educacion = {id:0, nivelInstitucion:'', fecha:'', titulo:''};
 
   constructor(private educacionService: EducacionService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-alert('Se editará id: '+id)  }
+    this.educacionService.traerPorId(id).subscribe(data=>{
+      this.educacion=data;
+      // this.router.navigate(['/home'])
+    });
+  }
 
   editar(): void {
     const id = this.activatedRoute.snapshot.params['id'];

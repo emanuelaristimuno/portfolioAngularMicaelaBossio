@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
 
 @Component({
@@ -11,18 +12,20 @@ export class ProyectosComponent implements OnInit {
   // proyecto: Proyecto = new Proyecto(" ", " ", " ", " ");
 
   proyectos: any;
-  constructor(private educacionProyectos: ProyectoService) { }
+  constructor(private proyectoService: ProyectoService) { }
 
   ngOnInit(): void {
-    this.educacionProyectos.getProyecto().subscribe(data => {
+    this.proyectoService.getProyecto().subscribe(data => {
       console.log(data);
       this.proyectos = data;
     })
   }
 
   borrarProyecto(id: number){
-    alert('Borrar id ' + id);
-  }
+    this.proyectoService.eliminarProyecto(id).subscribe(data => {
+      console.log("El ID: "+ id + ' fue eliminado');
+      this.ngOnInit();
+    })  }
 
 
 }

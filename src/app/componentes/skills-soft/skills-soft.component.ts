@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SkillsSoftService } from 'src/app/servicios/skills-soft.service';
 
 @Component({
@@ -11,17 +12,26 @@ export class SkillsSoftComponent implements OnInit {
 
   softskills:any;
 
-  constructor(private skillSoftService:SkillsSoftService) { }
+  constructor(private skillSoftService:SkillsSoftService, private router: Router) { }
 
   ngOnInit(): void {
     this.skillSoftService.getSkillSoft().subscribe(data=>{
       console.log(data);
       this.softskills=data;
+    });
+    this.cargarSoftskill();
+  }
+
+  cargarSoftskill(): void {
+    this.skillSoftService.getSkillSoft().subscribe(data => {
+      this.softskills = data;
     })
   }
 
   borrarSS(id: number){
-    alert('Borrar id ' + id);
-  }
+    this.skillSoftService.eliminarSoftSkill(id).subscribe(data => {
+      console.log("El ID: "+ id + ' fue eliminado');
+      this.cargarSoftskill();
+    })  }
 
 }
