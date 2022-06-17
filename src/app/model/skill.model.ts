@@ -2,7 +2,7 @@ export class Skill{
     id?: number;
     tipo: String;
     nombre: String;
-    porcentaje: number;
+    porcentaje: number|any;
 
     constructor (tipo: String, nombre: String, porcentaje: number){
         this.tipo=tipo;

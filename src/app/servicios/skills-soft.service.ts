@@ -21,11 +21,11 @@ export class SkillsSoftService {
     return this.http.post<any>(this.url + 'skill/crear', softSkill);
   }
 
-  public traerPorId(id:number): Observable<SoftSkill>{
-    return this.http.get<SoftSkill>(this.url + `traerporid/${id}`)
+  public traerPorId(id:any): Observable<any>{
+    return this.http.get<any>(this.url + `traerporid/${id}`)
   }
 
-  public editarSoftSkill(id:number, softSkill: Skill): Observable<any>{
+  public editarSoftSkill(id:any, softSkill: Skill): Observable<any>{
     return this.http.put<any>(this.url+`skill/editar/${id}`, softSkill);
   }
 

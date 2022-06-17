@@ -21,11 +21,11 @@ export class SkillsService {
     return this.http.post<any>(this.url + 'skill/crear', hardSkill);
   }
 
-  public traerPorId(id:number): Observable<Skill>{
-    return this.http.get<Skill>(this.url + `traerporid/${id}`)
+  public traerPorId(id:any): Observable<any>{
+    return this.http.get<any>(this.url + `traerporid/${id}`)
   }
 
-  public editarHardSkill(id:number, hardSkill: Skill): Observable<any>{
+  public editarHardSkill(id:any, hardSkill: Skill): Observable<any>{
     return this.http.put<any>(this.url+`skill/editar/${id}`, hardSkill);
   }
 

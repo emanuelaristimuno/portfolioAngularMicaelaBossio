@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
@@ -17,7 +16,6 @@ export class EditarComponent implements OnInit {
   }
 
   id = null;
-
 
   constructor(private educacionService: EducacionService, private activatedRoute: ActivatedRoute, private router: Router) { }
 

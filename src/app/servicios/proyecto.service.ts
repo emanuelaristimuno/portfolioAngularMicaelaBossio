@@ -20,11 +20,11 @@ export class ProyectoService {
     return this.http.post<any>(this.url + 'crear', proyecto);
   }
 
-  public traerPorId(id:number): Observable<Proyecto>{
-    return this.http.get<Proyecto>(this.url + `traerporid/${id}`)
+  public traerPorId(id:any): Observable<any>{
+    return this.http.get<any>(this.url + `traerporid/${id}`)
   }
 
-  public editarProyecto(id:number, proyecto: Proyecto): Observable<any>{
+  public editarProyecto(id:any, proyecto: Proyecto): Observable<any>{
     return this.http.put<any>(this.url+`editar/${id}`, proyecto);
   }
 

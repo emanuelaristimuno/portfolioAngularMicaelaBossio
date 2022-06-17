@@ -1,7 +1,7 @@
 export class Proyecto{
     id?: number;
     nombre: String;
-    fecha: number;
+    fecha: number|any;
     imagen: String;
     descripcion: String;
     link: String;
