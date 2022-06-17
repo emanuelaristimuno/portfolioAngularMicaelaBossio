@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
@@ -9,16 +10,11 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 
 export class InfoAcadComponent implements OnInit {
-  // educacion: Educacion = new Educacion(" ", " ", " ");
-  educacion: any;
+  educacion: Educacion | any = new Educacion(" ", " ", " ");
 
   constructor(private educacionService: EducacionService, private router: Router) { }
 
   ngOnInit(): void {
-    this.educacionService.getEducacion().subscribe(data => {
-      console.log(data);
-      this.educacion = data;
-    });
     this.cargarEducacion();
   }
 

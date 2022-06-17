@@ -16,9 +16,12 @@ import { EliminarSsComponent } from './componentes/CRUD-Skill/eliminar-ss/elimin
 import { CrearProyComponent } from './componentes/CRUD-Proyecto/crear-proy/crear-proy.component';
 import { EditarProyComponent } from './componentes/CRUD-Proyecto/editar-proy/editar-proy.component';
 import { EliminarProyComponent } from './componentes/CRUD-Proyecto/eliminar-proy/eliminar-proy.component';
+import { EditarPersonaComponent } from './componentes/acerca-de-mi/CRUD-AcercaDeMi/editar-persona/editar-persona.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  // PERSONA
+  { path: 'editarFoto/:id', component: EditarPersonaComponent },
   // EDUCACIÓN
   { path: 'crear', component: CrearComponent },
   { path: 'editar/:id', component: EditarComponent },

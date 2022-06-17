@@ -1,5 +1,5 @@
 <div class="form">
-    <form novalidate #f="ngForm" class="form-box">
+    <form class="form-box">
         <label for="nivelInstitucion">Nivel e Institucion</label>
         <input type="text" id="nivelInstitucion" name="nivelInstitucion" [(ngModel)]="educacion.nivelInstitucion">
         <br>
@@ -9,6 +9,6 @@
         <label for="titulo">Titulo</label>
         <input type="text" id="titulo" name="titulo" [(ngModel)]="educacion.titulo">
         <br>
-        <button (click)="editar()" class="btn btn-outline-danger btn-block" [disabled]="!f.valid">Editar</button>
+        <button (click)="guardar()" class="btn btn-outline-danger btn-block">Modificar</button>
     </form>
 </div>

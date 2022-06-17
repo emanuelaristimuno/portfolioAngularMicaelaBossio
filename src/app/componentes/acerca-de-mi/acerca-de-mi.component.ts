@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/servicios/persona.service';
 // import { PortfolioService } from 'src/app/servicios/portfolio.service';
@@ -11,11 +12,18 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 export class AcercaDeMiComponent implements OnInit {
   persona: Persona = new Persona(" ", " ", " ", " ", " ", " ");
 
-  constructor(public personaService: PersonaService) { }
+  constructor(public personaService: PersonaService, private router: Router) { }
 
   ngOnInit(): void {
     this.personaService.getPersona().subscribe(data=>{
       console.log(data);
+      this.persona=data;
+    });
+    this.cargarPersona();
+  }
+
+  cargarPersona(): void{
+    this.personaService.getPersona().subscribe(data=>{
       this.persona=data;
     })
   }

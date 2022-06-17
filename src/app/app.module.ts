@@ -39,6 +39,7 @@ import { EliminarSsComponent } from './componentes/CRUD-Skill/eliminar-ss/elimin
 import { CrearProyComponent } from './componentes/CRUD-Proyecto/crear-proy/crear-proy.component';
 import { EditarProyComponent } from './componentes/CRUD-Proyecto/editar-proy/editar-proy.component';
 import { EliminarProyComponent } from './componentes/CRUD-Proyecto/eliminar-proy/eliminar-proy.component';
+import { EditarPersonaComponent } from './componentes/acerca-de-mi/CRUD-AcercaDeMi/editar-persona/editar-persona.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { EliminarProyComponent } from './componentes/CRUD-Proyecto/eliminar-proy
     CrearProyComponent,
     EditarProyComponent,
     EliminarProyComponent,
+    EditarPersonaComponent,
   ],
   imports: [
     BrowserModule,

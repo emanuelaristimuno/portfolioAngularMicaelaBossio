@@ -10,25 +10,28 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class EditarComponent implements OnInit {
 
-  id?:number=0;
-  educacion: Educacion = {id:0, nivelInstitucion:'', fecha:'', titulo:''};
+  educacion = {
+    nivelInstitucion: '',
+    fecha: '',
+    titulo: ''
+  }
+
+  id = null;
+
 
   constructor(private educacionService: EducacionService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.params['id'];
-    this.educacionService.traerPorId(id).subscribe(data=>{
-      this.educacion=data;
-      // this.router.navigate(['/home'])
+    this.id = this.activatedRoute.snapshot.params['id'];
+    this.educacionService.traerPorId(this.id).subscribe(data => {
+      console.log('SE MODIFICARÁ ID: ' + this.id)
     });
   }
 
-  editar(): void {
-    const id = this.activatedRoute.snapshot.params['id'];
-    this.educacionService.editarEducacion(id, this.educacion).subscribe(data => {
-      this.educacion = data;
+  guardar() {
+    this.educacionService.editarEducacion(this.id, this.educacion).subscribe(data => {
+      console.log('SE MODIFICÓ ID: ' + this.id);
       this.router.navigate(['/home']);
     })
-
   }
 }
