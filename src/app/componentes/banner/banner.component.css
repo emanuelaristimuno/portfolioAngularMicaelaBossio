@@ -1,11 +1,14 @@
-.col{
-    margin: 0 2px;
+.btnfoto{
+    display: flex;
+    justify-content: start;
+    margin-top: -30px;
+    color: white;   
 }
 
 .btn {
     display: flex;
     justify-content: end;
-    padding: 5px;
+    color: black;   
 }
 img {
     width: 100%;
