@@ -40,6 +40,8 @@ import { CrearProyComponent } from './componentes/CRUD-Proyecto/crear-proy/crear
 import { EditarProyComponent } from './componentes/CRUD-Proyecto/editar-proy/editar-proy.component';
 import { EliminarProyComponent } from './componentes/CRUD-Proyecto/eliminar-proy/eliminar-proy.component';
 import { EditarPersonaComponent } from './componentes/acerca-de-mi/CRUD-AcercaDeMi/editar-persona/editar-persona.component';
+import { EditarDescripComponent } from './componentes/acerca-de-mi/CRUD-Descripc/editar-descrip/editar-descrip.component';
+import { EditarBannerComponent } from './componentes/CRUD-Banner/editar-banner/editar-banner.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,8 @@ import { EditarPersonaComponent } from './componentes/acerca-de-mi/CRUD-AcercaDe
     EditarProyComponent,
     EliminarProyComponent,
     EditarPersonaComponent,
+    EditarDescripComponent,
+    EditarBannerComponent,
   ],
   imports: [
     BrowserModule,

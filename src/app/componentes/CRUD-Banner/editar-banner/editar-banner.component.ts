@@ -4,13 +4,13 @@ import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
-  selector: 'app-editar-persona',
-  templateUrl: './editar-persona.component.html',
-  styleUrls: ['./editar-persona.component.css']
+  selector: 'app-editar-banner',
+  templateUrl: './editar-banner.component.html',
+  styleUrls: ['./editar-banner.component.css']
 })
-export class EditarPersonaComponent implements OnInit {
+export class EditarBannerComponent implements OnInit {
 
-  personaActual: Persona = { nombre: '', apellido: '', titulo: '', descripcion: '', image_perfil: '', banner: '' };
+  banner: Persona = { nombre: '', apellido: '', titulo: '', descripcion: '', image_perfil: '', banner: '' };
   id = null;
 
   constructor(private personaService: PersonaService, private activatedRoute: ActivatedRoute, private router: Router) { }
@@ -18,15 +18,16 @@ export class EditarPersonaComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
     this.personaService.traerPorId(this.id).subscribe(data => {
-      this.personaActual = data;
+      this.banner = data;
       console.log('SE MODIFICARÁ ID: ' + this.id)
     });
   }
 
   guardar() {
-    this.personaService.editarPersona(this.id, this.personaActual).subscribe(data => {
+    this.personaService.editarPersona(this.id, this.banner).subscribe(data => {
       console.log('SE MODIFICÓ ID: ' + this.id);
       this.router.navigate(['/home']);
     })
   }
+
 }

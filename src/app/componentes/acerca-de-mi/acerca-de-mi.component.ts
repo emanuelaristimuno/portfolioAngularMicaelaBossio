@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/servicios/persona.service';
-// import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
   selector: 'app-acerca-de-mi',
@@ -27,16 +26,6 @@ export class AcercaDeMiComponent implements OnInit {
       this.persona=data;
     })
   }
-
-  // miPortfolio:any; 
-  
-  // constructor(private datosAcercaDeMi:PortfolioService) { }
-  // ngOnInit(): void {
-  //   this.datosAcercaDeMi.obtenerDatos().subscribe(data => {
-  //     console.log(data);
-  //     this.miPortfolio=data;
-  //   });
-  // }
 }
 
 

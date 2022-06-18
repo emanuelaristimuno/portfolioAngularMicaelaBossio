@@ -4,11 +4,11 @@ import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
-  selector: 'app-editar-persona',
-  templateUrl: './editar-persona.component.html',
-  styleUrls: ['./editar-persona.component.css']
+  selector: 'app-editar-descrip',
+  templateUrl: './editar-descrip.component.html',
+  styleUrls: ['./editar-descrip.component.css']
 })
-export class EditarPersonaComponent implements OnInit {
+export class EditarDescripComponent implements OnInit {
 
   personaActual: Persona = { nombre: '', apellido: '', titulo: '', descripcion: '', image_perfil: '', banner: '' };
   id = null;
@@ -29,4 +29,5 @@ export class EditarPersonaComponent implements OnInit {
       this.router.navigate(['/home']);
     })
   }
+
 }

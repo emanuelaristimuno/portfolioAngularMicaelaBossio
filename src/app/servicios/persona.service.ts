@@ -15,11 +15,11 @@ export class PersonaService {
     return this.http.get<Persona>(this.url + 'traer');
   }
 
-  public traerPorId(id:number): Observable<Persona>{
-    return this.http.get<Persona>(this.url + `traerporid/${id}`)
+  public traerPorId(id:any): Observable<any>{
+    return this.http.get<any>(this.url + `traerporid/${id}`)
   }
 
-  public editarPersona(id: number, persona: Persona): Observable<any>{
+  public editarPersona(id: any, persona: Persona): Observable<any>{
     return this.http.put<any>(this.url+  `editar/${id}`, persona);
   }
 }

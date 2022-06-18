@@ -17,11 +17,17 @@ import { CrearProyComponent } from './componentes/CRUD-Proyecto/crear-proy/crear
 import { EditarProyComponent } from './componentes/CRUD-Proyecto/editar-proy/editar-proy.component';
 import { EliminarProyComponent } from './componentes/CRUD-Proyecto/eliminar-proy/eliminar-proy.component';
 import { EditarPersonaComponent } from './componentes/acerca-de-mi/CRUD-AcercaDeMi/editar-persona/editar-persona.component';
+import { EditarDescripComponent } from './componentes/acerca-de-mi/CRUD-Descripc/editar-descrip/editar-descrip.component';
+import { EditarBannerComponent } from './componentes/CRUD-Banner/editar-banner/editar-banner.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  // BANNER
+  { path: 'editarBanner/:id', component: EditarBannerComponent },
   // PERSONA
   { path: 'editarFoto/:id', component: EditarPersonaComponent },
+  // DESCRIPCIÓN PERSONA
+  { path: 'editarDescripc/:id', component: EditarDescripComponent },
   // EDUCACIÓN
   { path: 'crear', component: CrearComponent },
   { path: 'editar/:id', component: EditarComponent },
