@@ -1,7 +1,7 @@
 <div class="row">
     <div class="table-responsive">
         <h5>...EDUCACIÓN...</h5>
-        <app-btn-agregar routerLink="/crear" class="btnAgregar"></app-btn-agregar>
+        <app-btn-agregar *ngIf="isAdmin" routerLink="/crear" class="btnAgregar"></app-btn-agregar>
         <br>
         <div class="col h6Div">
             <h6><b>ID</b></h6>
@@ -13,7 +13,7 @@
             <thead>
             </thead>
             <tr>
-                <td class="col-3">
+                <td *ngIf="isAdmin" class="col-3">
                     <app-btn-editar routerLink="/editar/{{educ.id}}"></app-btn-editar>
                     <app-btn-delete (click)="borrar(educ.id)"></app-btn-delete>
                     <p>{{educ?.id}}</p>

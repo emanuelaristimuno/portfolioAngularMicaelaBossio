@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImgHastaProntoComponent } from './img-hasta-pronto.component';
+import { PagInexistenteComponent } from './pag-inexistente.component';
 
-describe('ImgHastaProntoComponent', () => {
-  let component: ImgHastaProntoComponent;
-  let fixture: ComponentFixture<ImgHastaProntoComponent>;
+describe('PagInexistenteComponent', () => {
+  let component: PagInexistenteComponent;
+  let fixture: ComponentFixture<PagInexistenteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImgHastaProntoComponent ]
+      declarations: [ PagInexistenteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImgHastaProntoComponent);
+    fixture = TestBed.createComponent(PagInexistenteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

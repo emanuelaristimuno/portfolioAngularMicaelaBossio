@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SkillsService } from 'src/app/servicios/skills.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-skills',
@@ -12,7 +13,11 @@ export class SkillsComponent implements OnInit {
 
   hardskills: any;
 
-  constructor(private skillService: SkillsService, private router: Router) { }
+  //ACCESO PARA ELIMINAR
+  roles!: string[];
+  isAdmin = false;
+
+  constructor(private skillService: SkillsService, private router: Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.skillService.getSkill().subscribe(data => {
@@ -25,7 +30,15 @@ export class SkillsComponent implements OnInit {
   cargarHardSkill(): void {
     this.skillService.getSkill().subscribe(data => {
       this.hardskills = data;
-    })
+    });
+
+    //ACCESO PARA ELIMINAR
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol=>{
+      if(rol=== 'ROLE_ADMIN'){
+        this.isAdmin=true;
+      }
+    });
   }
 
   borrarHS(id: number) {

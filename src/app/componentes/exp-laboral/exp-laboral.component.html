@@ -1,7 +1,7 @@
 <div class="row">
     <div class="table-responsive expLab">
         <h5>...EXPERIENCIA LABORAL...</h5>
-        <app-btn-agregar routerLink="/crearEL" class="btnAgregar"></app-btn-agregar>
+        <app-btn-agregar *ngIf="isAdmin" routerLink="/crearEL" class="btnAgregar"></app-btn-agregar>
         <br>
         <div class="col titulos">
             <h6><b>EMPRESA</b></h6>
@@ -12,7 +12,7 @@
             <thead>
             </thead>
             <tr>
-                <td class="col-3">
+                <td *ngIf="isAdmin" class="col-3">
                     <app-btn-editar routerLink="/editarEL/{{trabajo.id}}"></app-btn-editar>
                     <app-btn-delete (click)="borrarEL(trabajo.id)"></app-btn-delete>
                     <p><b>{{trabajo?.id}}</b></p>

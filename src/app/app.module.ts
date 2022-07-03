@@ -14,14 +14,12 @@ import { SkillsComponent } from './componentes/skills/skills.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { LogoutComponent } from './componentes/logout/logout.component';
 import { BtnEditarComponent } from './componentes/btn-editar/btn-editar.component';
 import { BtnAgregarComponent } from './componentes/btn-agregar/btn-agregar.component';
 import { BtnDeleteComponent } from './componentes/btn-delete/btn-delete.component';
 import { FormularioAccesoComponent } from './componentes/formulario-acceso/formulario-acceso.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
-import { ImgHastaProntoComponent } from './componentes/img-hasta-pronto/img-hasta-pronto.component';
 import { SkillsSoftComponent } from './componentes/skills-soft/skills-soft.component';
 import { FormsModule } from '@angular/forms';
 import { CrearComponent } from './componentes/CRUD-Educacion/crear/crear.component';
@@ -42,6 +40,11 @@ import { EliminarProyComponent } from './componentes/CRUD-Proyecto/eliminar-proy
 import { EditarPersonaComponent } from './componentes/acerca-de-mi/CRUD-AcercaDeMi/editar-persona/editar-persona.component';
 import { EditarDescripComponent } from './componentes/acerca-de-mi/CRUD-Descripc/editar-descrip/editar-descrip.component';
 import { EditarBannerComponent } from './componentes/CRUD-Banner/editar-banner/editar-banner.component';
+import { PagInexistenteComponent } from './componentes/pag-inexistente/pag-inexistente.component';
+import { RegistroComponent } from './auth/registro.component';
+import { IndexComponent } from './index/index.component';
+import { ImgPincipalComponent } from './componentes/img-pincipal/img-pincipal.component';
+import { interceptorProvider } from './interceptors/prod-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -55,13 +58,11 @@ import { EditarBannerComponent } from './componentes/CRUD-Banner/editar-banner/e
     SkillsComponent,
     ProyectosComponent,
     LoginComponent,
-    LogoutComponent,
     BtnEditarComponent,
     BtnAgregarComponent,
     BtnDeleteComponent,
     FormularioAccesoComponent,
     HomeComponent,
-    ImgHastaProntoComponent,
     SkillsSoftComponent,
     CrearComponent,
     EditarComponent,
@@ -81,6 +82,10 @@ import { EditarBannerComponent } from './componentes/CRUD-Banner/editar-banner/e
     EditarPersonaComponent,
     EditarDescripComponent,
     EditarBannerComponent,
+    PagInexistenteComponent,
+    RegistroComponent,
+    IndexComponent,
+    ImgPincipalComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +95,7 @@ import { EditarBannerComponent } from './componentes/CRUD-Banner/editar-banner/e
     RouterModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

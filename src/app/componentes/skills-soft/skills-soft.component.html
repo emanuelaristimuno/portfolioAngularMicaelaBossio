@@ -2,11 +2,11 @@
 <div class="row skills">
 
     <hr>
-    <app-btn-agregar routerLink="/crearSS" class="btnAgregar"></app-btn-agregar>
+    <app-btn-agregar *ngIf="isAdmin" routerLink="/crearSS" class="btnAgregar"></app-btn-agregar>
     <br>
     <div *ngFor="let skill of softskills" class="col-xs-12 col-sm-3 margin text-center">
         <h6><b><i>.{{skill?.tipo}}.</i></b></h6>
-        <div class="btnHard">
+        <div *ngIf="isAdmin" class="btnHard">
             <app-btn-editar routerLink="/editarSS/{{skill.id}}" class="btnEditar"></app-btn-editar>
             <app-btn-delete (click)="borrarSS(skill.id)"></app-btn-delete>
         </div>

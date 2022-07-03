@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -9,16 +10,28 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 })
 
 export class ProyectosComponent implements OnInit {
-  // proyecto: Proyecto = new Proyecto(" ", " ", " ", " ");
 
   proyectos: any;
-  constructor(private proyectoService: ProyectoService) { }
+
+  //ACCESO PARA ELIMINAR
+  roles!: string[];
+  isAdmin = false;
+
+  constructor(private proyectoService: ProyectoService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.proyectoService.getProyecto().subscribe(data => {
       console.log(data);
       this.proyectos = data;
-    })
+    });
+
+    //ACCESO PARA ELIMINAR
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol=>{
+      if(rol=== 'ROLE_ADMIN'){
+        this.isAdmin=true;
+      }
+    });
   }
 
   borrarProyecto(id: number){

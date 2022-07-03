@@ -1,0 +1,5 @@
+<app-menu></app-menu>
+<div class="container text-center">
+    <div *ngIf="isLogged; else loggedOut"><h2>Bienvenido a mi Portfolio, ya puede dirigirse a "Inicio" y ver el contenido.</h2><p>Solo el Administrador puede realizar modificaciones, cualquier duda, contactarse a través de las redes sociales.</p></div>
+    <ng-template #loggedOut><h2>HASTA PRONTO...</h2> </ng-template>
+</div>
